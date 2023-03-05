@@ -1,15 +1,15 @@
 import styled from "styled-components"
 
-const About:React.FC = () => {
+const Portfolio:React.FC = () => {
 
     return(
-        <Wrapper id="about">
-            About
+        <Wrapper id="portfolio">
+            Portfolio
         </Wrapper>
     )
 }
 
-export default About;
+export default Portfolio;
 
 const Wrapper = styled.div`
     height: 100vh;

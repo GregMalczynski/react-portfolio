@@ -5,24 +5,25 @@ import styled from "styled-components";
 import Navigation from "./Navigation";
 import Home from "./Home";
 import About from "./About";
+import Experience from "./Experience";
+import Portfolio from "./Portfolio";
 
 
 interface Props{
-    darkMode: any
+    isDarkMode: any,
 }
 
 const Main:React.FC = () => {
 
-    const [ darkMode, setDarkMode ] = useState(true)
+    const [ isDarkMode, setIsDarkMode ] = useState<any>(true)
 
     return(
-        <Wrapper darkMode={darkMode} >
-            <Navigation 
-                styles={styles} 
-                colorMode={colorMode}
-            />
-            <Home />
-            <About />    
+        <Wrapper isDarkMode={isDarkMode}>
+            <Navigation isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode}/>
+            <Home isDarkMode={isDarkMode}/>
+            <About /> 
+            <Experience />
+            <Portfolio />  
         </Wrapper>
     )
 }
@@ -30,6 +31,6 @@ const Main:React.FC = () => {
 export default Main;
 
 const Wrapper = styled.div<Props>`
-    width: 100vw;
-    background: ${(props: any) => props.darkMode ? styles.darkMode.backgroundColor : styles.brightMode.backgroundColor};
+    width: 100%;
+    background: ${(props: any) => props.isDarkMode ? colorMode.darkMode.backgroundColor : colorMode.brightMode.backgroundColor};
 `
