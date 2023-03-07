@@ -1,6 +1,6 @@
 const main = 16
-const h1 = main * 8
-const h2 = main * 6
+const h1 = main * 7
+const h2 = main * 5
 const h3 = main * 3
 const h4 = main * 2
 

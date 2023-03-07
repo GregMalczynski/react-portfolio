@@ -21,9 +21,9 @@ const Main:React.FC = () => {
         <Wrapper isDarkMode={isDarkMode}>
             <Navigation isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode}/>
             <Home isDarkMode={isDarkMode}/>
-            <About /> 
-            <Experience />
-            <Portfolio />  
+            <About isDarkMode={isDarkMode}/> 
+            <Experience isDarkMode={isDarkMode}/>
+            <Portfolio isDarkMode={isDarkMode}/>  
         </Wrapper>
     )
 }

@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 17.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 width="319.087px" height="353.734px" viewBox="0 0 319.087 353.734" enable-background="new 0 0 319.087 353.734"
 	 xml:space="preserve">
 <g id="Warstwa_4">
 </g>
 <g id="Warstwa_3">
-	<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="159.5439" y1="51.7629" x2="159.5439" y2="319.7628">
-		<stop  offset="0" style="stop-color:#FFD8AA"/>
-		<stop  offset="0.4778" style="stop-color:#FAB786"/>
-		<stop  offset="1" style="stop-color:#F38955"/>
+	
+		<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="-142.856" y1="632.0428" x2="-142.856" y2="900.0427" gradientTransform="matrix(1 0 0 -1 302.4 934.0139)">
+		<stop  offset="0.0394" style="stop-color:#FF9500"/>
+		<stop  offset="0.8818" style="stop-color:#FFDC00"/>
 	</linearGradient>
 	<path fill="url(#SVGID_1_)" d="M299.887,73.925l-0.247-0.17L181.117,5.326C174.996,1.792,167.954,0,160.188,0
 		c-10.072,0-17.816,3.016-18.666,3.359l-0.484,0.196L21.139,72.778C3.878,82.745,0.218,108.003,0.07,109.073L0,109.583v132.514
@@ -27,6 +27,6 @@
 		c0,1.551,0.838,2.326,2.519,2.326h12.849c1.677,0,2.52-0.774,2.52-2.326v-10c0-11.78-3.905-21.239-11.715-28.372
 		c-7.81-7.129-18.183-10.698-31.113-10.698c-12.936,0-23.265,3.528-30.987,10.582c-7.728,7.057-11.589,16.475-11.589,28.255v38.915
 		H15v-58.903c0.497-2.855,3.747-19.213,13.639-24.925l118.896-68.645c1.457-0.51,6.549-2.124,12.652-2.124
-		c5.1,0,9.618,1.116,13.43,3.316l117.928,68.086c1.511,1.142,12.543,9.978,12.543,23.694V243.003z"/>
+		c5.1,0,9.618,1.116,13.43,3.316L291.545,86.4c1.511,1.142,12.543,9.978,12.543,23.694V243.003z"/>
 </g>
 </svg>

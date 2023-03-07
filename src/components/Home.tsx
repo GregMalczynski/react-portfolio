@@ -12,6 +12,7 @@ const Home:React.FC<Props> = ({isDarkMode}) => {
         <Wrapper>
             <SectionLeft isDarkMode={isDarkMode}>
                 <div style={{lineHeight: '5.2rem'}}>
+                    <h4 style={{fontSize: styles.h4, fontWeight: 400}}>Hi there, I'm</h4>
                     <h2 style={{fontSize: styles.h2}}>Grzegorz</h2>
                     <h1 style={{fontSize: styles.h1}}>Malczynski</h1>
                 </div>
@@ -26,7 +27,9 @@ const Home:React.FC<Props> = ({isDarkMode}) => {
                 </a>                 
             </SectionLeft>
             <SectionRight>
-               <img width="500px" src="./bg.svg" />
+                <Image>
+                    <img src="./bike.svg" />
+                </Image>
             </SectionRight>
         </Wrapper>
     )
@@ -72,6 +75,11 @@ const SectionRight = styled.div`
     width: 50%;
     display: flex;
     justify-content: center;
-    align-items: center;
-    
+    align-items: center; 
+`
+const Image = styled.div`
+    img{
+        width: 100%;
+        max-width: 750px;
+    }
 `
