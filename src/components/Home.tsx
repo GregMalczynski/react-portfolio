@@ -11,7 +11,7 @@ const Home:React.FC<Props> = ({isDarkMode}) => {
     return(
         <Wrapper>
             <SectionLeft isDarkMode={isDarkMode}>
-                <div style={{lineHeight: '5.2rem'}}>
+                <div>
                     <h4 style={{fontSize: styles.h4, fontWeight: 400}}>Hi there, I'm</h4>
                     <h2 style={{fontSize: styles.h2}}>Grzegorz</h2>
                     <h1 style={{fontSize: styles.h1}}>Malczynski</h1>
@@ -37,23 +37,30 @@ const Home:React.FC<Props> = ({isDarkMode}) => {
 
 export default Home;
 
-const Wrapper = styled.div`
-    position: absolute
+const Wrapper = styled.div`   
     height: 100vh;
     width: 100%;
     display: flex;
     flex-direction: row;
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+    }
 `
 const SectionLeft = styled.div<Props>`
     width: 50%;
     height: 100vh;
-    padding: 50px;
     display: flex;
     flex-direction: column;
     align-items: left;
     justify-content: center;
     gap: 1rem;
     color: ${(props: any) => props.isDarkMode ? colorMode.darkMode.color : colorMode.brightMode.color};
+
+    @media (max-width: 768px) {
+        width: 100%;
+        align-items: center;
+    }
 `
 const Button = styled.button<Props>`
     margin-top: 30px;
@@ -72,7 +79,6 @@ const Button = styled.button<Props>`
 `
 const SectionRight = styled.div`
     height: 100vh;
-    width: 50%;
     display: flex;
     justify-content: center;
     align-items: center; 

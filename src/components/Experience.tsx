@@ -12,7 +12,6 @@ const Experience:React.FC<Props> = ({isDarkMode}) => {
         <Wrapper id="experience">
             <SectionLeft isDarkMode={isDarkMode}>
                 <div style={{lineHeight: '5.2rem'}}>
-                    <h2 style={{fontSize: styles.h2}}>My</h2>
                     <h1 style={{fontSize: styles.h1}}>Experience</h1>
                 </div>
                 <div style={{lineHeight: '30px'}}>

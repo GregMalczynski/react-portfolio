@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { colorMode } from "../app-data/colorMode";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 interface Props{
     isDarkMode: any,
@@ -10,22 +10,23 @@ interface Mode{
     setIsDarkMode: any,
 }
 
-
 const Navigation:React.FC <Props & Mode> = ({isDarkMode, setIsDarkMode}) => {
 
+    const markerWidthInitial = useRef<any>(null)
+        
     const [ markerLeft, setMarkerLeft ] = useState(0);
-    const [ markerWidth, setMarkerWidth] = useState();
-
+    const [ markerWidth, setMarkerWidth] = useState(0);
 
     useEffect(() => {
+        setMarkerWidth(markerWidthInitial.current?.clientWidth)
+    }, [])
 
+    useEffect(() => {  
         const items = document.querySelectorAll('.nav a')
-
         const indicator = (e: any) => {
             setMarkerLeft(e.offsetLeft)
             setMarkerWidth(e.offsetWidth)
         }
-
         items.forEach(link => {
             link.addEventListener('click', (e) => {
                 indicator(e.target)
@@ -33,20 +34,19 @@ const Navigation:React.FC <Props & Mode> = ({isDarkMode, setIsDarkMode}) => {
             return () => link.removeEventListener('click', (e) => {indicator(e.target)})
         })  
     }, [])
-    
 
-    console.log(markerLeft)
+    console.log(markerWidthInitial?.current?.clientWidth)
     
-
     return(
         <Wrapper isDarkMode={isDarkMode}>
+            <Background>
             <Logo>
                 <a href="#start"><img width="40px" src="./logo.svg"/></a>
             </Logo>
             <RightSide>
                 <MenuTop className="nav" isDarkMode={isDarkMode}>
                     <div className="marker" style={{left: `${markerLeft}px`, width: `${markerWidth}px`}}></div>
-                    <a href="#">HOME</a>
+                    <a ref={markerWidthInitial} href="#">HOME</a>
                     <a href='#about'>ABOUT</a>
                     <a href='#experience'>EXPERIENCE</a>
                     <a href="#portfolio">PORTFOLIO</a>
@@ -61,6 +61,7 @@ const Navigation:React.FC <Props & Mode> = ({isDarkMode, setIsDarkMode}) => {
                     EN  |  PL
                 </Language>
             </RightSide>
+            </Background>
         </Wrapper>
     )
 }
@@ -70,7 +71,6 @@ export default Navigation;
 const Wrapper = styled.div<Props>`
     width: 100%;
     height: 70px;
-    background: ${(props: any) => props.isDarkMode ? `${colorMode.darkMode.backgroundColor}` : `${colorMode.brightMode.backgroundColor}`};
     position: fixed;
     display: flex;
     flex-direction: row;
@@ -79,6 +79,7 @@ const Wrapper = styled.div<Props>`
     z-index: 1;
 `
 const Logo = styled.div`
+  
     margin-left: 50px;
 `
 const RightSide = styled.div`
@@ -102,4 +103,16 @@ const ColorMode = styled.div`
 const Language = styled.div`
     width: 70px;
     color: white;
+`
+const Background = styled.div`
+    position: absolute;
+    width: 100%;
+    height: 70px;
+    background-color: rgb(0, 0, 0, 0.6);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(15px);
 `
