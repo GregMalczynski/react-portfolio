@@ -29,7 +29,7 @@ b{
   left: 0;
   height: 3px;
   width: 0;
-  background: white;
+  background: #fabd14;
   bottom: -5px;
   transition: 0.5s;
 }

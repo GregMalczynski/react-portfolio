@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { colorMode } from "../app-data/colorMode";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 interface Props{
     isDarkMode: any,
@@ -13,12 +13,30 @@ interface Mode{
 
 const Navigation:React.FC <Props & Mode> = ({isDarkMode, setIsDarkMode}) => {
 
-    const marker = document.querySelector('.marker')
-    const items = document.querySelectorAll('.nav a')
+    const [ markerLeft, setMarkerLeft ] = useState(0);
+    const [ markerWidth, setMarkerWidth] = useState();
 
+
+    useEffect(() => {
+
+        const items = document.querySelectorAll('.nav a')
+
+        const indicator = (e: any) => {
+            setMarkerLeft(e.offsetLeft)
+            setMarkerWidth(e.offsetWidth)
+        }
+
+        items.forEach(link => {
+            link.addEventListener('click', (e) => {
+                indicator(e.target)
+            })
+            return () => link.removeEventListener('click', (e) => {indicator(e.target)})
+        })  
+    }, [])
     
 
-    console.log(items)
+    console.log(markerLeft)
+    
 
     return(
         <Wrapper isDarkMode={isDarkMode}>
@@ -27,7 +45,7 @@ const Navigation:React.FC <Props & Mode> = ({isDarkMode, setIsDarkMode}) => {
             </Logo>
             <RightSide>
                 <MenuTop className="nav" isDarkMode={isDarkMode}>
-                    <div className="marker"></div>
+                    <div className="marker" style={{left: `${markerLeft}px`, width: `${markerWidth}px`}}></div>
                     <a href="#">HOME</a>
                     <a href='#about'>ABOUT</a>
                     <a href='#experience'>EXPERIENCE</a>
